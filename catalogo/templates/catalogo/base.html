@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Meu Catálogo de Músicas{% endblock %}</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; }
+    nav { background: #333; color: white; padding: 1em; }
+    nav a { color: white; text-decoration: none; }
+    .container { max-width: 800px; margin: 2em auto; padding: 1em; }
+    .btn { padding: 8px 12px; background: #007bff; color: white; text-decoration: none; border-radius: 4px; }
+    .btn-danger { background: #dc3545; }
+    .btn-secondary { background: #6c757d; }
+    a { color: #007bff; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="{% url 'song-list' %}"><h1>Catálogo de Músicas</h1></a>
+  </nav>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

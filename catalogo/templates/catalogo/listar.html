@@ -1,0 +1,22 @@
+{% extends "catalogo/base.html" %}
+
+{% block title %}Lista de Músicas{% endblock %}
+
+{% block content %}
+  <h2>Todas as Músicas</h2>
+  <p>
+    <a href="{% url 'song-create' %}" class="btn">Adicionar Nova Música</a>
+  </p>
+
+  <ul style="list-style: none; padding: 0;">
+    {% for song in songs %}
+      <li style="margin-bottom: 1em; border-bottom: 1px solid #ccc; padding-bottom: 1em;">
+        <strong><a href="{{ song.get_absolute_url }}">{{ song.title }}</a></strong>
+        <br>
+        <small>Artista: {{ song.artist }} | Álbum: {{ song.album|default:"N/A" }}</small>
+      </li>
+    {% empty %}
+      <li>Nenhuma música encontrada.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

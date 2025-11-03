@@ -1,0 +1,18 @@
+{% extends "catalogo/base.html" %}
+
+{% block title %}{{ song.title }}{% endblock %}
+
+{% block content %}
+  <h2>{{ song.title }}</h2>
+  <p><strong>Artista:</strong> {{ song.artist }}</p>
+  <p><strong>Álbum:</strong> {{ song.album|default:"N/A" }}</p>
+  <p><strong>Gênero:</strong> {{ song.genre }}</p>
+  <p><strong>Lançamento:</strong> {{ song.release_date|date:"d/m/Y"|default:"N/A" }}</p>
+
+  <hr>
+
+  <a href="{% url 'song-update' song.pk %}" class="btn">Editar</a>
+  <a href="{% url 'song-delete' song.pk %}" class="btn btn-danger">Excluir</a>
+  <br><br>
+  <a href="{% url 'song-list' %}" class="btn btn-secondary">Voltar para a Lista</a>
+{% endblock %}

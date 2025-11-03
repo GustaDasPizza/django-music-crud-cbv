@@ -1,0 +1,17 @@
+{% extends "catalogo/base.html" %}
+
+{% block title %}Confirmar Exclusão{% endblock %}
+
+{% block content %}
+  <h2>Confirmar Exclusão</h2>
+  <p>
+    Você tem certeza que deseja excluir a música: 
+    <strong>"{{ song.title }}" por {{ song.artist }}</strong>?
+  </p>
+
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sim, excluir</button>
+    <a href="{{ song.get_absolute_url }}" class="btn btn-secondary">Cancelar</a>
+  </form>
+{% endblock %}

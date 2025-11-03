@@ -1,0 +1,17 @@
+{% extends "catalogo/base.html" %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+  <h2>{{ page_title }}</h2>
+
+  <form method="post">
+    {% csrf_token %} <div style="display: grid; grid-template-columns: 150px 1fr; gap: 10px;">
+      {{ form.as_p }}
+    </div>
+
+    <br>
+    <button type="submit" class="btn">Salvar</button>
+    <a href="{{ song.get_absolute_url|default:'/' }}" class="btn btn-secondary">Cancelar</a>
+  </form>
+{% endblock %}
