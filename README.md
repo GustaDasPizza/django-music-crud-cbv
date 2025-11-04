@@ -6,6 +6,7 @@ genéricas do framework. Tendo como objetivo gerenciar um catálogo de músicas.
 Modelo principal (`Song`)
 
 | Campo | Tipo | Descrição |
+| :--- | :--- | :--- |
 | `title` | CharField | Título da música. |
 | `artist` | CharField | Nome do artista/banda. |
 | `album` | CharField | Álbum (opcional). |
